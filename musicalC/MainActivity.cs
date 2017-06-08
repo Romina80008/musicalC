@@ -39,11 +39,9 @@ namespace musicalC
 
 
 
-
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-
 
             FacebookSdk.SdkInitialize(this.ApplicationContext);
 
@@ -56,7 +54,6 @@ namespace musicalC
             SetContentView(Resource.Layout.Main);
 
 
-            // 5   Button faceBookButton = FindViewById<Button>(Resource.Id.button);
 
             mTxtFirstName = FindViewById<TextView>(Resource.Id.txtFirstName);
             mTxtLastName = FindViewById<TextView>(Resource.Id.txtLastName);
@@ -73,7 +70,6 @@ namespace musicalC
 
 
             /*Accediendo a la aplicacion*/
-
             Toast.MakeText(this, "Comprobando inicio ", ToastLength.Long).Show();
 
 
@@ -107,7 +103,7 @@ namespace musicalC
 
                 catch (System.Exception ex)     /*Corregir o es java.exception */
                 {
-                    //Handle error
+                    //
                 }
             }
             
