@@ -308,12 +308,6 @@ namespace musicalC
 			// aapt resource value: 0x7f080003
 			public const int box_count = 2131230723;
 			
-			// aapt resource value: 0x7f08001f
-			public const int btnGetEmail = 2131230751;
-			
-			// aapt resource value: 0x7f08001e
-			public const int btnShare = 2131230750;
-			
 			// aapt resource value: 0x7f080004
 			public const int button = 2131230724;
 			
@@ -356,8 +350,8 @@ namespace musicalC
 			// aapt resource value: 0x7f080019
 			public const int login_button = 2131230745;
 			
-			// aapt resource value: 0x7f080020
-			public const int messenger_send_button = 2131230752;
+			// aapt resource value: 0x7f08001e
+			public const int messenger_send_button = 2131230750;
 			
 			// aapt resource value: 0x7f08000e
 			public const int never_display = 2131230734;

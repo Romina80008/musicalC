@@ -30,14 +30,13 @@ namespace musicalC
     public class MainActivity : Activity, IFacebookCallback, GraphRequest.IGraphJSONObjectCallback
     {
         private ICallbackManager mCallBackManager;
-        //  private MyProfileTracker mProfileTracker;
+        private MyProfileTracker mProfileTracker;
 
         private TextView mTxtFirstName;
         private TextView mTxtLastName;
         private TextView mTxtName;
         private ProfilePictureView mProfilePic;
-        private ShareButton mBtnShared;
-        private Button mBtnGetEmail;
+
 
 
 
@@ -49,10 +48,10 @@ namespace musicalC
             FacebookSdk.SdkInitialize(this.ApplicationContext);
 
 
-            /*    mProfileTracker = new MyProfileTracker();
+                mProfileTracker = new MyProfileTracker();
                 mProfileTracker.mOnProfileChanged += mProfileTracker_mOnProfileChanged;
                 mProfileTracker.StartTracking();
-    */
+    
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
@@ -63,15 +62,8 @@ namespace musicalC
             mTxtLastName = FindViewById<TextView>(Resource.Id.txtLastName);
             mTxtName = FindViewById<TextView>(Resource.Id.txtName);
             mProfilePic = FindViewById<ProfilePictureView>(Resource.Id.profilePic);
-            mBtnShared = FindViewById<ShareButton>(Resource.Id.btnShare);
-            mBtnGetEmail = FindViewById<Button>(Resource.Id.btnGetEmail);
 
 
-            //if (AccessToken.CurrentAccessToken != null)
-            //{
-            //    //The user is logged in through Facebook
-            //    faceBookButton.Text = "Logged Out";                
-            //}
 
             LoginButton button = FindViewById<LoginButton>(Resource.Id.login_button);
 
@@ -85,42 +77,8 @@ namespace musicalC
             Toast.MakeText(this, "Comprobando inicio ", ToastLength.Long).Show();
 
 
-
             button.RegisterCallback(mCallBackManager, this);
 
-            /*
-                        mBtnGetEmail.Click += (o, e) =>
-                        {
-                            GraphRequest request = GraphRequest.NewMeRequest(AccessToken.CurrentAccessToken, this);
-
-                            Bundle parameters = new Bundle();
-                            parameters.PutString("fields", "id,name,age_range,email");
-                            request.Parameters = parameters;
-                            request.ExecuteAsync();
-                        };
-                        */
-            //   LoginManager.Instance.RegisterCallback(mCallBackManager, this);
-
-            //faceBookButton.Click += (o, e) =>
-            //{
-            //    if (AccessToken.CurrentAccessToken != null)
-            //    {
-            //        //The user is logged in through Facebook
-            //        LoginManager.Instance.LogOut();
-            //        faceBookButton.Text = "My Facebook login button";
-            //    }
-
-            //    else
-            //    {
-            //        //The user is not logged in
-            //        LoginManager.Instance.LogInWithReadPermissions(this, new List<string> { "public_profile", "user_friends" });
-            //        faceBookButton.Text = "Logged Out";
-            //    }
-
-            //};
-
-            //    ShareLinkContent content = new ShareLinkContent.Builder().Build();
-            //    mBtnShared.ShareContent = content;
 
         }
         public void OnCompleted(Org.Json.JSONObject json, GraphResponse response)
@@ -134,7 +92,7 @@ namespace musicalC
             throw new NotImplementedException();
         }
 
-        /*
+        
         void mProfileTracker_mOnProfileChanged(object sender, OnProfileChangedEventArgs e)
         {
             if (e.mProfile != null)
@@ -147,7 +105,7 @@ namespace musicalC
                     mProfilePic.ProfileId = e.mProfile.Id;
                 }
 
-                catch (Exception ex)
+                catch (System.Exception ex)     /*Corregir o es java.exception */
                 {
                     //Handle error
                 }
@@ -162,7 +120,7 @@ namespace musicalC
                 mProfilePic.ProfileId = null;
             }
         }
-        */
+        
         public void OnCancel()
         {
             Toast.MakeText(this, "Cancelado ", ToastLength.Long).Show();
@@ -188,13 +146,13 @@ namespace musicalC
             base.OnActivityResult(requestCode, resultCode, data);
             mCallBackManager.OnActivityResult(requestCode, (int)resultCode, data);
         }
-        /*
-                protected override void OnDestroy()
-                {
+        
+          protected override void OnDestroy()
+          {
                     mProfileTracker.StopTracking();
                     base.OnDestroy();
-                }       
-            }
+          }       
+    }
 
             public class MyProfileTracker : ProfileTracker
             {
@@ -213,9 +171,9 @@ namespace musicalC
             {
                 public Profile mProfile;
 
-                public OnProfileChangedEventArgs(Profile profile) { mProfile = profile; }*/
+                public OnProfileChangedEventArgs(Profile profile) { mProfile = profile; }
 
 
-    }
+            }
 }
 
