@@ -435,6 +435,9 @@ namespace musicalC
 			// aapt resource value: 0x7f030009
 			public const int messenger_button_send_white_small = 2130903049;
 			
+			// aapt resource value: 0x7f03000a
+			public const int principal = 2130903050;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

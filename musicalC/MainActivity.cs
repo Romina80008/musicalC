@@ -62,6 +62,7 @@ namespace musicalC
 
 
 
+
             LoginButton button = FindViewById<LoginButton>(Resource.Id.login_button);
 
             button.SetReadPermissions(new List<string> { "public_profile", "user_friends", "email" });
@@ -109,7 +110,7 @@ namespace musicalC
             
             else
             {
-                //the user must have logged out
+                //el usuario debe estar ingresado
                 mTxtFirstName.Text = "First Name";
                 mTxtLastName.Text = "Last Name";
                 mTxtName.Text = "Name";
@@ -120,7 +121,7 @@ namespace musicalC
         public void OnCancel()
         {
             Toast.MakeText(this, "Cancelado ", ToastLength.Long).Show();
-            //throw new NotImplementedException();
+           
         }
 
         public void OnError(FacebookException error)
