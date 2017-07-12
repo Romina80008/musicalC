@@ -38,11 +38,11 @@ namespace musicalC
         private ProfilePictureView mProfilePic;
 
 
-
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
+/*
             FacebookSdk.SdkInitialize(this.ApplicationContext);
 
 
@@ -52,6 +52,9 @@ namespace musicalC
     
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+
+           
+
 
 
 
@@ -69,15 +72,18 @@ namespace musicalC
 
             mCallBackManager = CallbackManagerFactory.Create();
 
-
-            /*Accediendo a la aplicacion*/
+            
             Toast.MakeText(this, "Comprobando inicio ", ToastLength.Long).Show();
 
 
             button.RegisterCallback(mCallBackManager, this);
+*/
+             SetContentView(Resource.Layout.principal);
 
 
-        }
+        }//Fin del main 
+
+
         public void OnCompleted(Org.Json.JSONObject json, GraphResponse response)
         {
             string data = json.ToString();

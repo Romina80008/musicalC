@@ -311,6 +311,9 @@ namespace musicalC
 			// aapt resource value: 0x7f080004
 			public const int button = 2131230724;
 			
+			// aapt resource value: 0x7f080022
+			public const int button1 = 2131230754;
+			
 			// aapt resource value: 0x7f080009
 			public const int center = 2131230729;
 			
@@ -350,6 +353,9 @@ namespace musicalC
 			// aapt resource value: 0x7f080019
 			public const int login_button = 2131230745;
 			
+			// aapt resource value: 0x7f080020
+			public const int longText = 2131230752;
+			
 			// aapt resource value: 0x7f08001e
 			public const int messenger_send_button = 2131230750;
 			
@@ -376,6 +382,12 @@ namespace musicalC
 			
 			// aapt resource value: 0x7f080005
 			public const int standard = 2131230725;
+			
+			// aapt resource value: 0x7f08001f
+			public const int textView1 = 2131230751;
+			
+			// aapt resource value: 0x7f080021
+			public const int textView2 = 2131230753;
 			
 			// aapt resource value: 0x7f080008
 			public const int top = 2131230728;
