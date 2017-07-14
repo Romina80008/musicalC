@@ -4,6 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
+        android:text="Registro de Usuario"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:foregroundGravity="center_horizontal"
+        android:gravity="center" />
+    <TextView
         android:text="Usuario"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
@@ -11,8 +19,8 @@
         android:id="@+id/textView1" />
     <EditText
         android:text=""
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/longText"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_marginLeft="5dp" />
@@ -24,8 +32,8 @@
         android:id="@+id/textView2" />
     <EditText
         android:text=""
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/longText"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_marginLeft="5dp" />

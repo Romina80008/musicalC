@@ -24,6 +24,7 @@ using System.Collections.Specialized;
 using Java.Lang;
 using Org.Json;
 
+
 namespace musicalC
 {
     [Activity(Label = "musicalC", MainLauncher = true, Icon = "@drawable/icon")]
@@ -37,6 +38,15 @@ namespace musicalC
         private TextView mTxtName;
         private ProfilePictureView mProfilePic;
 
+
+        /*Web Service*/
+        private ProgressBar mProgressBar; 
+        private WebClient mClient;
+        private Uri mUri;
+        private List<Usuario> usuarios; 
+
+        /*Registro*/
+        private Button btnRegistro;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -80,8 +90,42 @@ namespace musicalC
 */
              SetContentView(Resource.Layout.principal);
 
+            btnRegistro = FindViewById<Button>(Resource.Id.button1);
+
+            mClient = new WebClient();
+            mUri = new Uri("http://didacdedm.pythonanywhere.com/api/users");
+
+            mClient.DownloadDataAsync(mUri);
+            mClient.DownloadDataCompleted += mClient_DownloadDataCompleted;
+
+
+            btnRegistro.Click += btn_registrar;
 
         }//Fin del main 
+
+        public void mClient_DownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e) {
+
+            RunOnUiThread(() =>
+            {
+                string json = System.Text.Encoding.UTF8.GetString(e.Result);
+                usuarios = JsonConvert.DeserializeObject<List<Usuario>>(json);
+                Toast.MakeText(this, "Informacion cargada ", ToastLength.Long).Show();
+
+
+
+            });
+
+
+        }
+
+
+
+        /*Metodo de registro*/
+        public void btn_registrar(object sender, EventArgs e) {
+            //controlar q ningun string sea nulo 
+
+
+        }
 
 
         public void OnCompleted(Org.Json.JSONObject json, GraphResponse response)
