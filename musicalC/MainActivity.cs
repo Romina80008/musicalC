@@ -24,12 +24,20 @@ using System.Collections.Specialized;
 using Java.Lang;
 using Org.Json;
 
+using System.Text;
+
+
 
 namespace musicalC
 {
+
+
+
     [Activity(Label = "musicalC", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity, IFacebookCallback, GraphRequest.IGraphJSONObjectCallback
     {
+
+        /*Facebook Service*/
         private ICallbackManager mCallBackManager;
         private MyProfileTracker mProfileTracker;
 
@@ -45,85 +53,105 @@ namespace musicalC
         private Uri mUri;
         private List<Usuario> usuarios; 
 
-        /*Registro*/
-        private Button btnRegistro;
+        /*Botones*/
+        private Button btnRegistrar;
+        private Button btnEmpezar;
+
+
+
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-/*
+
             FacebookSdk.SdkInitialize(this.ApplicationContext);
 
+            mProfileTracker = new MyProfileTracker();
+            mProfileTracker.mOnProfileChanged += mProfileTracker_mOnProfileChanged;
+            mProfileTracker.StartTracking();
 
-                mProfileTracker = new MyProfileTracker();
-                mProfileTracker.mOnProfileChanged += mProfileTracker_mOnProfileChanged;
-                mProfileTracker.StartTracking();
-    
-            // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.Main);
+            // Renderizando primerapantalla 
+            SetContentView(Resource.Layout.empezar);
 
-           
+            btnEmpezar = FindViewById<Button>(Resource.Id.btnEmpezar);
+            btnEmpezar.Click += btn_empezar;
 
-
-
-
-            mTxtFirstName = FindViewById<TextView>(Resource.Id.txtFirstName);
-            mTxtLastName = FindViewById<TextView>(Resource.Id.txtLastName);
-            mTxtName = FindViewById<TextView>(Resource.Id.txtName);
-            mProfilePic = FindViewById<ProfilePictureView>(Resource.Id.profilePic);
+            //ConsumirServicioGet();
 
 
 
-
-            LoginButton button = FindViewById<LoginButton>(Resource.Id.login_button);
-
-            button.SetReadPermissions(new List<string> { "public_profile", "user_friends", "email" });
-
-            mCallBackManager = CallbackManagerFactory.Create();
-
-            
-            Toast.MakeText(this, "Comprobando inicio ", ToastLength.Long).Show();
+        }//Fin del main 
 
 
-            button.RegisterCallback(mCallBackManager, this);
-*/
-             SetContentView(Resource.Layout.principal);
 
-            btnRegistro = FindViewById<Button>(Resource.Id.button1);
-
+     
+        public void ConsumirServicioGet() {
+            // Consumiendo servicio get 
             mClient = new WebClient();
             mUri = new Uri("http://didacdedm.pythonanywhere.com/api/users");
 
             mClient.DownloadDataAsync(mUri);
             mClient.DownloadDataCompleted += mClient_DownloadDataCompleted;
+        } 
 
 
-            btnRegistro.Click += btn_registrar;
+        /*Metodo de registro*/
+        public void btn_registrar(object sender, EventArgs e)
+        {
+            SetContentView(Resource.Layout.registro);
+            CreateContactDialog dialog = new CreateContactDialog();
+            FragmentTransaction transaction = FragmentManager.BeginTransaction();
 
-        }//Fin del main 
-
-        public void mClient_DownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e) {
-
-            RunOnUiThread(() =>
-            {
-                string json = System.Text.Encoding.UTF8.GetString(e.Result);
-                usuarios = JsonConvert.DeserializeObject<List<Usuario>>(json);
-                Toast.MakeText(this, "Informacion cargada ", ToastLength.Long).Show();
-
+          //Subscribe to event
+            dialog.OnCreateContact += dialog_OnCreateContact;
+            dialog.Show(transaction, "create contact! RRRR");
 
 
-            });
+        }
 
-
+        void dialog_OnCreateContact(object sender, CreateContactEventArgs e)
+        {
+            //Create a new contact and update the UI
+            // mContacts.Add(new Contact() { ID = e.ID, Name = e.Name, Number = e.Number });
+            // mAdapter.NotifyDataSetChanged();
+            Toast.MakeText(this, "ENTRO ACA ", ToastLength.Long).Show();
         }
 
 
 
         /*Metodo de registro*/
-        public void btn_registrar(object sender, EventArgs e) {
-            //controlar q ningun string sea nulo 
+        public void btn_empezar(object sender, EventArgs e)
+        {
+            //pantalla para logearse
+            SetContentView(Resource.Layout.Main);
 
+            /*Informacion extraida de facebook*/
+            mTxtFirstName = FindViewById<TextView>(Resource.Id.txtFirstName);
+            mTxtLastName = FindViewById<TextView>(Resource.Id.txtLastName);
+            mTxtName = FindViewById<TextView>(Resource.Id.txtName);
+            mProfilePic = FindViewById<ProfilePictureView>(Resource.Id.profilePic);
+
+            LoginButton btnFacebook = FindViewById<LoginButton>(Resource.Id.login_button);
+            btnFacebook.SetReadPermissions(new List<string> { "public_profile", "user_friends", "email" });
+            mCallBackManager = CallbackManagerFactory.Create();
+            btnFacebook.RegisterCallback(mCallBackManager, this);
+
+            
+            btnRegistrar = FindViewById<Button>(Resource.Id.btnRegistrar);
+            btnRegistrar.Click += btn_registrar;
+        }
+
+        /*Consumiendo servicio*/
+        public void mClient_DownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e) {  //Cargando la informacion 
+
+            RunOnUiThread(() =>
+            {
+                string json = Encoding.UTF8.GetString(e.Result);
+                usuarios = JsonConvert.DeserializeObject<List<Usuario>>(json);
+                Toast.MakeText(this, "Informacion cargada ", ToastLength.Long).Show();
+               // Console.ReadKey();
+            });
 
         }
 
@@ -217,9 +245,7 @@ namespace musicalC
             public class OnProfileChangedEventArgs : EventArgs
             {
                 public Profile mProfile;
-
                 public OnProfileChangedEventArgs(Profile profile) { mProfile = profile; }
-
 
             }
 }

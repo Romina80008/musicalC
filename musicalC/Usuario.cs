@@ -22,5 +22,16 @@ namespace musicalC
         public string password_hash { get; set; }
         public string username { get; set; }
 
+
+        public Usuario(string email, string first_name, string last_name, string password_hash, string username ) {
+
+            this.email = email;
+            this.first_name = first_name;
+            this.is_admin = "false";
+            this.last_name = last_name;
+            this.password_hash = password_hash;
+            this.username = username;
+        }
+
     }
 }

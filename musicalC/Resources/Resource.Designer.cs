@@ -203,88 +203,91 @@ namespace musicalC
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int com_facebook_button_background = 2130837504;
+			public const int chica_auriculares = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int com_facebook_button_icon = 2130837505;
+			public const int com_facebook_button_background = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int com_facebook_button_like_background = 2130837506;
+			public const int com_facebook_button_icon = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int com_facebook_button_like_icon_selected = 2130837507;
+			public const int com_facebook_button_like_background = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int com_facebook_button_login_silver_background = 2130837508;
+			public const int com_facebook_button_like_icon_selected = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int com_facebook_button_send_background = 2130837509;
+			public const int com_facebook_button_login_silver_background = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int com_facebook_button_send_icon = 2130837510;
+			public const int com_facebook_button_send_background = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int com_facebook_close = 2130837511;
+			public const int com_facebook_button_send_icon = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int com_facebook_profile_picture_blank_portrait = 2130837512;
+			public const int com_facebook_close = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int com_facebook_profile_picture_blank_square = 2130837513;
+			public const int com_facebook_profile_picture_blank_portrait = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int com_facebook_tooltip_black_background = 2130837514;
+			public const int com_facebook_profile_picture_blank_square = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int com_facebook_tooltip_black_bottomnub = 2130837515;
+			public const int com_facebook_tooltip_black_background = 2130837515;
 			
 			// aapt resource value: 0x7f02000c
-			public const int com_facebook_tooltip_black_topnub = 2130837516;
+			public const int com_facebook_tooltip_black_bottomnub = 2130837516;
 			
 			// aapt resource value: 0x7f02000d
-			public const int com_facebook_tooltip_black_xout = 2130837517;
+			public const int com_facebook_tooltip_black_topnub = 2130837517;
 			
 			// aapt resource value: 0x7f02000e
-			public const int com_facebook_tooltip_blue_background = 2130837518;
+			public const int com_facebook_tooltip_black_xout = 2130837518;
 			
 			// aapt resource value: 0x7f02000f
-			public const int com_facebook_tooltip_blue_bottomnub = 2130837519;
+			public const int com_facebook_tooltip_blue_background = 2130837519;
 			
 			// aapt resource value: 0x7f020010
-			public const int com_facebook_tooltip_blue_topnub = 2130837520;
+			public const int com_facebook_tooltip_blue_bottomnub = 2130837520;
 			
 			// aapt resource value: 0x7f020011
-			public const int com_facebook_tooltip_blue_xout = 2130837521;
+			public const int com_facebook_tooltip_blue_topnub = 2130837521;
 			
 			// aapt resource value: 0x7f020012
-			public const int Icon = 2130837522;
+			public const int com_facebook_tooltip_blue_xout = 2130837522;
 			
 			// aapt resource value: 0x7f020013
-			public const int messenger_bubble_large_blue = 2130837523;
+			public const int Icon = 2130837523;
 			
 			// aapt resource value: 0x7f020014
-			public const int messenger_bubble_large_white = 2130837524;
+			public const int messenger_bubble_large_blue = 2130837524;
 			
 			// aapt resource value: 0x7f020015
-			public const int messenger_bubble_small_blue = 2130837525;
+			public const int messenger_bubble_large_white = 2130837525;
 			
 			// aapt resource value: 0x7f020016
-			public const int messenger_bubble_small_white = 2130837526;
+			public const int messenger_bubble_small_blue = 2130837526;
 			
 			// aapt resource value: 0x7f020017
-			public const int messenger_button_blue_bg_round = 2130837527;
+			public const int messenger_bubble_small_white = 2130837527;
 			
 			// aapt resource value: 0x7f020018
-			public const int messenger_button_blue_bg_selector = 2130837528;
+			public const int messenger_button_blue_bg_round = 2130837528;
 			
 			// aapt resource value: 0x7f020019
-			public const int messenger_button_send_round_shadow = 2130837529;
+			public const int messenger_button_blue_bg_selector = 2130837529;
 			
 			// aapt resource value: 0x7f02001a
-			public const int messenger_button_white_bg_round = 2130837530;
+			public const int messenger_button_send_round_shadow = 2130837530;
 			
 			// aapt resource value: 0x7f02001b
-			public const int messenger_button_white_bg_selector = 2130837531;
+			public const int messenger_button_white_bg_round = 2130837531;
+			
+			// aapt resource value: 0x7f02001c
+			public const int messenger_button_white_bg_selector = 2130837532;
 			
 			static Drawable()
 			{
@@ -299,6 +302,12 @@ namespace musicalC
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f080021
+			public const int Password = 2131230753;
+			
+			// aapt resource value: 0x7f080020
+			public const int UserName = 2131230752;
+			
 			// aapt resource value: 0x7f08000c
 			public const int automatic = 2131230732;
 			
@@ -308,11 +317,20 @@ namespace musicalC
 			// aapt resource value: 0x7f080003
 			public const int box_count = 2131230723;
 			
+			// aapt resource value: 0x7f080019
+			public const int btnEmpezar = 2131230745;
+			
+			// aapt resource value: 0x7f080024
+			public const int btnRegistrar = 2131230756;
+			
+			// aapt resource value: 0x7f08002e
+			public const int btnRegistrar1 = 2131230766;
+			
 			// aapt resource value: 0x7f080004
 			public const int button = 2131230724;
 			
-			// aapt resource value: 0x7f080023
-			public const int button1 = 2131230755;
+			// aapt resource value: 0x7f080022
+			public const int button1 = 2131230754;
 			
 			// aapt resource value: 0x7f080009
 			public const int center = 2131230729;
@@ -338,6 +356,9 @@ namespace musicalC
 			// aapt resource value: 0x7f080015
 			public const int com_facebook_tooltip_bubble_view_top_pointer = 2131230741;
 			
+			// aapt resource value: 0x7f08001a
+			public const int demoImageView = 2131230746;
+			
 			// aapt resource value: 0x7f08000d
 			public const int display_always = 2131230733;
 			
@@ -350,14 +371,11 @@ namespace musicalC
 			// aapt resource value: 0x7f08000a
 			public const int left = 2131230730;
 			
-			// aapt resource value: 0x7f080019
-			public const int login_button = 2131230745;
+			// aapt resource value: 0x7f080023
+			public const int login_button = 2131230755;
 			
-			// aapt resource value: 0x7f080021
-			public const int longText = 2131230753;
-			
-			// aapt resource value: 0x7f08001e
-			public const int messenger_send_button = 2131230750;
+			// aapt resource value: 0x7f080025
+			public const int messenger_send_button = 2131230757;
 			
 			// aapt resource value: 0x7f08000e
 			public const int never_display = 2131230734;
@@ -371,8 +389,8 @@ namespace musicalC
 			// aapt resource value: 0x7f080001
 			public const int page = 2131230721;
 			
-			// aapt resource value: 0x7f08001a
-			public const int profilePic = 2131230746;
+			// aapt resource value: 0x7f08001c
+			public const int profilePic = 2131230748;
 			
 			// aapt resource value: 0x7f08000b
 			public const int right = 2131230731;
@@ -383,26 +401,44 @@ namespace musicalC
 			// aapt resource value: 0x7f080005
 			public const int standard = 2131230725;
 			
-			// aapt resource value: 0x7f080020
-			public const int textView1 = 2131230752;
+			// aapt resource value: 0x7f080027
+			public const int textView1 = 2131230759;
 			
-			// aapt resource value: 0x7f080022
-			public const int textView2 = 2131230754;
+			// aapt resource value: 0x7f08001b
+			public const int textView2 = 2131230747;
 			
-			// aapt resource value: 0x7f08001f
-			public const int textView3 = 2131230751;
+			// aapt resource value: 0x7f080026
+			public const int textView3 = 2131230758;
 			
 			// aapt resource value: 0x7f080008
 			public const int top = 2131230728;
 			
-			// aapt resource value: 0x7f08001b
-			public const int txtFirstName = 2131230747;
+			// aapt resource value: 0x7f08002d
+			public const int txtConfirmPassword = 2131230765;
 			
-			// aapt resource value: 0x7f08001c
-			public const int txtLastName = 2131230748;
+			// aapt resource value: 0x7f080028
+			public const int txtEmail = 2131230760;
 			
 			// aapt resource value: 0x7f08001d
-			public const int txtName = 2131230749;
+			public const int txtFirstName = 2131230749;
+			
+			// aapt resource value: 0x7f08002a
+			public const int txtFirstname = 2131230762;
+			
+			// aapt resource value: 0x7f08001e
+			public const int txtLastName = 2131230750;
+			
+			// aapt resource value: 0x7f08002b
+			public const int txtLastname = 2131230763;
+			
+			// aapt resource value: 0x7f08001f
+			public const int txtName = 2131230751;
+			
+			// aapt resource value: 0x7f08002c
+			public const int txtPassword = 2131230764;
+			
+			// aapt resource value: 0x7f080029
+			public const int txtUsername = 2131230761;
 			
 			// aapt resource value: 0x7f080002
 			public const int unknown = 2131230722;
@@ -430,28 +466,31 @@ namespace musicalC
 			public const int com_facebook_tooltip_bubble = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int Main = 2130903043;
+			public const int empezar = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int messenger_button_send_blue_large = 2130903044;
+			public const int Main = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int messenger_button_send_blue_round = 2130903045;
+			public const int messenger_button_send_blue_large = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int messenger_button_send_blue_small = 2130903046;
+			public const int messenger_button_send_blue_round = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int messenger_button_send_white_large = 2130903047;
+			public const int messenger_button_send_blue_small = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int messenger_button_send_white_round = 2130903048;
+			public const int messenger_button_send_white_large = 2130903048;
 			
 			// aapt resource value: 0x7f030009
-			public const int messenger_button_send_white_small = 2130903049;
+			public const int messenger_button_send_white_round = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int principal = 2130903050;
+			public const int messenger_button_send_white_small = 2130903050;
+			
+			// aapt resource value: 0x7f03000b
+			public const int registro = 2130903051;
 			
 			static Layout()
 			{
