@@ -16,8 +16,8 @@ namespace musicalC
     {
         public string email { get; set; }
         public string first_name { get; set; }
-        public string id { get; set; }
-        public string is_admin { get; set; }
+       // public string id { get; set; }
+        public bool is_admin { get; set; }
         public string last_name { get; set; }
         public string password_hash { get; set; }
         public string username { get; set; }
@@ -27,7 +27,7 @@ namespace musicalC
 
             this.email = email;
             this.first_name = first_name;
-            this.is_admin = "false";
+            this.is_admin = true;
             this.last_name = last_name;
             this.password_hash = password_hash;
             this.username = username;

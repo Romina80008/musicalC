@@ -99,7 +99,7 @@ namespace musicalC
         /*Metodo de registro*/
         public void btn_registrar(object sender, EventArgs e)
         {
-            SetContentView(Resource.Layout.registro);
+           // SetContentView(Resource.Layout.registro);
             CreateContactDialog dialog = new CreateContactDialog();
             FragmentTransaction transaction = FragmentManager.BeginTransaction();
 

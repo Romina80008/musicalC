@@ -10,7 +10,11 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using System.Net;
+
 using System.Collections.Specialized;
+using Newtonsoft.Json;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace musicalC
 {
@@ -77,6 +81,7 @@ namespace musicalC
             WebClient client = new WebClient();
             Uri uri = new Uri("http://didacdedm.pythonanywhere.com/api/users/add");
             NameValueCollection parameters = new NameValueCollection();
+            
 
             parameters.Add("email", txtEmail.Text);
             parameters.Add("first_name", txtFirstname.Text);
@@ -85,6 +90,8 @@ namespace musicalC
             parameters.Add("password_hash", txtPassword.Text);
             parameters.Add("username", txtUsername.Text);
 
+            //HttpClient oHttpClient = new HttpClient();
+
             client.UploadValuesCompleted += Client_UploadValuesCompleted;
             client.UploadValuesAsync(uri, parameters);
 
@@ -92,7 +99,7 @@ namespace musicalC
 
         void Client_UploadValuesCompleted(object sender, UploadValuesCompletedEventArgs e)
         {
-            Activity.RunOnUiThread(() =>
+            Activity.RunOnUiThread(async () =>
             {
                 //string id = Encoding.UTF8.GetString(e.Result); //Get the data echo backed from PHP
                 //int newID = 0;
@@ -102,7 +109,14 @@ namespace musicalC
                 {
                     //Broadcast event
 
-                    OnCreateContact.Invoke(this, new CreateContactEventArgs(txtEmail.Text, txtFirstname.Text, txtLastname.Text, txtPassword.Text, txtUsername.Text));
+                    //OnCreateContact.Invoke(this, new CreateContactEventArgs(txtEmail.Text, txtFirstname.Text, txtLastname.Text, txtPassword.Text, txtUsername.Text));
+                    var person = new Usuario(txtEmail.Text, txtFirstname.Text, txtLastname.Text, txtPassword.Text, txtUsername.Text);
+                    var json = JsonConvert.SerializeObject(person);
+                    // var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    await MakePostRequest("http://didacdedm.pythonanywhere.com/api/users/add", json);
+
+
                 }
 
                 //mProgressBar.Visibility = ViewStates.Invisible;
@@ -110,7 +124,33 @@ namespace musicalC
             });
 
         }
-        
+
+        public async Task<string> MakePostRequest(string url, string serializedDataString, bool isJson = true)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            if (isJson)
+                request.ContentType = "application/json";
+            else
+                request.ContentType = "application/x-www-form-urlencoded";
+
+            request.Method = "POST";
+            var stream = await request.GetRequestStreamAsync();
+            using (var writer = new StreamWriter(stream))
+            {
+                writer.Write(serializedDataString);
+                writer.Flush();
+                writer.Dispose();
+            }
+
+            var response = await request.GetResponseAsync();
+            var respStream = response.GetResponseStream();
+
+            using (StreamReader sr = new StreamReader(respStream))
+            {
+                return sr.ReadToEnd();
+            }
+        }
+
         public override void OnActivityCreated(Bundle savedInstanceState)
         {
             Dialog.Window.RequestFeature(WindowFeatures.NoTitle);
