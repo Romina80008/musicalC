@@ -317,20 +317,20 @@ namespace musicalC
 			// aapt resource value: 0x7f080003
 			public const int box_count = 2131230723;
 			
-			// aapt resource value: 0x7f080019
-			public const int btnEmpezar = 2131230745;
+			// aapt resource value: 0x7f08001a
+			public const int btnEmpezar = 2131230746;
+			
+			// aapt resource value: 0x7f080022
+			public const int btnIniciarSesion = 2131230754;
 			
 			// aapt resource value: 0x7f080024
 			public const int btnRegistrar = 2131230756;
 			
-			// aapt resource value: 0x7f08002e
-			public const int btnRegistrar1 = 2131230766;
+			// aapt resource value: 0x7f08002f
+			public const int btnRegistrar1 = 2131230767;
 			
 			// aapt resource value: 0x7f080004
 			public const int button = 2131230724;
-			
-			// aapt resource value: 0x7f080022
-			public const int button1 = 2131230754;
 			
 			// aapt resource value: 0x7f080009
 			public const int center = 2131230729;
@@ -356,8 +356,8 @@ namespace musicalC
 			// aapt resource value: 0x7f080015
 			public const int com_facebook_tooltip_bubble_view_top_pointer = 2131230741;
 			
-			// aapt resource value: 0x7f08001a
-			public const int demoImageView = 2131230746;
+			// aapt resource value: 0x7f080019
+			public const int demoImageView = 2131230745;
 			
 			// aapt resource value: 0x7f08000d
 			public const int display_always = 2131230733;
@@ -395,50 +395,53 @@ namespace musicalC
 			// aapt resource value: 0x7f08000b
 			public const int right = 2131230731;
 			
+			// aapt resource value: 0x7f080027
+			public const int sendButton1 = 2131230759;
+			
 			// aapt resource value: 0x7f080011
 			public const int small = 2131230737;
 			
 			// aapt resource value: 0x7f080005
 			public const int standard = 2131230725;
 			
-			// aapt resource value: 0x7f080027
-			public const int textView1 = 2131230759;
+			// aapt resource value: 0x7f080026
+			public const int textView1 = 2131230758;
 			
 			// aapt resource value: 0x7f08001b
 			public const int textView2 = 2131230747;
 			
-			// aapt resource value: 0x7f080026
-			public const int textView3 = 2131230758;
+			// aapt resource value: 0x7f080028
+			public const int textView3 = 2131230760;
 			
 			// aapt resource value: 0x7f080008
 			public const int top = 2131230728;
 			
-			// aapt resource value: 0x7f08002d
-			public const int txtConfirmPassword = 2131230765;
+			// aapt resource value: 0x7f08002e
+			public const int txtConfirmPassword = 2131230766;
 			
-			// aapt resource value: 0x7f080028
-			public const int txtEmail = 2131230760;
+			// aapt resource value: 0x7f080029
+			public const int txtEmail = 2131230761;
 			
 			// aapt resource value: 0x7f08001d
 			public const int txtFirstName = 2131230749;
 			
-			// aapt resource value: 0x7f08002a
-			public const int txtFirstname = 2131230762;
+			// aapt resource value: 0x7f08002b
+			public const int txtFirstname = 2131230763;
 			
 			// aapt resource value: 0x7f08001e
 			public const int txtLastName = 2131230750;
 			
-			// aapt resource value: 0x7f08002b
-			public const int txtLastname = 2131230763;
+			// aapt resource value: 0x7f08002c
+			public const int txtLastname = 2131230764;
 			
 			// aapt resource value: 0x7f08001f
 			public const int txtName = 2131230751;
 			
-			// aapt resource value: 0x7f08002c
-			public const int txtPassword = 2131230764;
+			// aapt resource value: 0x7f08002d
+			public const int txtPassword = 2131230765;
 			
-			// aapt resource value: 0x7f080029
-			public const int txtUsername = 2131230761;
+			// aapt resource value: 0x7f08002a
+			public const int txtUsername = 2131230762;
 			
 			// aapt resource value: 0x7f080002
 			public const int unknown = 2131230722;

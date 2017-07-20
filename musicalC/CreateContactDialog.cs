@@ -19,30 +19,10 @@ using System.Threading.Tasks;
 namespace musicalC
 {
 
-    public class CreateContactEventArgs : EventArgs
-    {
-        public string email { get; set; }
-        public string first_name { get; set; }
-        public string is_admin { get; set; }
-        public string last_name { get; set; }
-        public string password_hash { get; set; }
-        public string username { get; set; }
-
-        public CreateContactEventArgs(string email, string first_name, string last_name, string password_hash, string username)
-        {
-
-            this.email = email;
-            this.first_name = first_name;
-            this.is_admin = "true";
-            this.last_name = last_name;
-            this.password_hash = password_hash;
-            this.username = username;
-        }
-    }  /*Mandar a una clase*/
-
     class CreateContactDialog : DialogFragment
     {
         private Button mButtonCreateContact;
+        
         /*Registrar usuario*/
         private TextView txtEmail;
         private TextView txtUsername;
@@ -51,7 +31,9 @@ namespace musicalC
         private TextView txtPassword;
         private TextView txtConfirmPassword;
 
-        public event EventHandler<CreateContactEventArgs> OnCreateContact;
+        //public event EventHandler<CreateContactEventArgs> OnCreateContact;
+        public event EventHandler<Usuario> OnCreateContact;
+
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -114,7 +96,8 @@ namespace musicalC
                     var json = JsonConvert.SerializeObject(person);
                     // var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                    await MakePostRequest("http://didacdedm.pythonanywhere.com/api/users/add", json);
+                    Servicios s = new Servicios();
+                    await s.MakePostRequest("http://didacdedm.pythonanywhere.com/api/users/add", json);
 
 
                 }
@@ -125,32 +108,6 @@ namespace musicalC
 
         }
 
-        public async Task<string> MakePostRequest(string url, string serializedDataString, bool isJson = true)
-        {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            if (isJson)
-                request.ContentType = "application/json";
-            else
-                request.ContentType = "application/x-www-form-urlencoded";
-
-            request.Method = "POST";
-            var stream = await request.GetRequestStreamAsync();
-            using (var writer = new StreamWriter(stream))
-            {
-                writer.Write(serializedDataString);
-                writer.Flush();
-                writer.Dispose();
-            }
-
-            var response = await request.GetResponseAsync();
-            var respStream = response.GetResponseStream();
-
-            using (StreamReader sr = new StreamReader(respStream))
-            {
-                return sr.ReadToEnd();
-            }
-        }
-
         public override void OnActivityCreated(Bundle savedInstanceState)
         {
             Dialog.Window.RequestFeature(WindowFeatures.NoTitle);
@@ -158,4 +115,5 @@ namespace musicalC
            // Dialog.Window.Attributes.WindowAnimations = Resource.Style.dialog_animation;
         }
     }
+    
 }

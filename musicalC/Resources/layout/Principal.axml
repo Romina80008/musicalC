@@ -3,16 +3,14 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ActionMenuView
-        android:minWidth="25px"
-        android:minHeight="25px"
+    <TextView
+        android:text="Genero"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/actionMenuView1" />
-    <ActionMenuView
-        android:minWidth="25px"
-        android:minHeight="25px"
+        android:id="@+id/textView1" />
+    <com.facebook.share.widget.SendButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/actionMenuView2" />
+        android:id="@+id/sendButton1" />
 </LinearLayout>

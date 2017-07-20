@@ -56,6 +56,7 @@ namespace musicalC
         /*Botones*/
         private Button btnRegistrar;
         private Button btnEmpezar;
+        private Button btnIniciarSesion;
 
 
 
@@ -85,6 +86,8 @@ namespace musicalC
 
 
 
+
+
      
         public void ConsumirServicioGet() {
             // Consumiendo servicio get 
@@ -110,7 +113,7 @@ namespace musicalC
 
         }
 
-        void dialog_OnCreateContact(object sender, CreateContactEventArgs e)
+        void dialog_OnCreateContact(object sender, Usuario e)
         {
             //Create a new contact and update the UI
             // mContacts.Add(new Contact() { ID = e.ID, Name = e.Name, Number = e.Number });
@@ -140,10 +143,28 @@ namespace musicalC
             
             btnRegistrar = FindViewById<Button>(Resource.Id.btnRegistrar);
             btnRegistrar.Click += btn_registrar;
+
+            btnIniciarSesion = FindViewById<Button>(Resource.Id.btnIniciarSesion);
+            btnIniciarSesion.Click += btn_iniciar_sesion;
+
+
+
         }
 
-        /*Consumiendo servicio*/
-        public void mClient_DownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e) {  //Cargando la informacion 
+        /*Metodo de registro*/
+        public void btn_iniciar_sesion(object sender, EventArgs e)
+        {
+            //si esque el usuario se encuentra en la base 
+            SetContentView(Resource.Layout.Principal);
+
+
+
+            //else -> presenta mensaje de error no pasa de pagina
+
+        }
+
+            /*Consumiendo servicio*/
+            public void mClient_DownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e) {  //Cargando la informacion 
 
             RunOnUiThread(() =>
             {

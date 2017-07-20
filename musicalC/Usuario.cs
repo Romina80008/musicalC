@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace musicalC
 {
-    class Usuario
+    class Usuario : EventArgs
     {
         public string email { get; set; }
         public string first_name { get; set; }
