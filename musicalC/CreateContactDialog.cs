@@ -15,6 +15,9 @@ using System.Collections.Specialized;
 using Newtonsoft.Json;
 using System.IO;
 using System.Threading.Tasks;
+using Android;
+
+using Android.Support.V7.App;
 
 namespace musicalC
 {

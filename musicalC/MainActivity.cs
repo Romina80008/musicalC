@@ -26,6 +26,8 @@ using Org.Json;
 
 using System.Text;
 
+using Android.Support.V7.App;
+
 
 
 namespace musicalC
@@ -33,8 +35,8 @@ namespace musicalC
 
 
 
-    [Activity(Label = "musicalC", MainLauncher = true, Icon = "@drawable/icon")]
-    public class MainActivity : Activity, IFacebookCallback, GraphRequest.IGraphJSONObjectCallback
+    [Activity(Label = "musicalC", MainLauncher = true, Icon = "@drawable/icon", Theme ="@style/MyTheme")]
+    public class MainActivity : ActionBarActivity, IFacebookCallback, GraphRequest.IGraphJSONObjectCallback //Activity
     {
 
         /*Facebook Service*/
@@ -57,6 +59,10 @@ namespace musicalC
         private Button btnRegistrar;
         private Button btnEmpezar;
         private Button btnIniciarSesion;
+
+
+        /*Menu*/
+        private Android.Support.V7.Widget.Toolbar mToolbar;
 
 
 
@@ -129,6 +135,8 @@ namespace musicalC
             //pantalla para logearse
             SetContentView(Resource.Layout.Main);
 
+           
+
             /*Informacion extraida de facebook*/
             mTxtFirstName = FindViewById<TextView>(Resource.Id.txtFirstName);
             mTxtLastName = FindViewById<TextView>(Resource.Id.txtLastName);
@@ -157,14 +165,23 @@ namespace musicalC
             //si esque el usuario se encuentra en la base 
             SetContentView(Resource.Layout.Principal);
 
-
+            mToolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            SetSupportActionBar(mToolbar);
+            SupportActionBar.Title = "Yay for the Toolbar!";
 
             //else -> presenta mensaje de error no pasa de pagina
 
         }
 
-            /*Consumiendo servicio*/
-            public void mClient_DownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e) {  //Cargando la informacion 
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.action_menu, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+
+        /*Consumiendo servicio*/
+        public void mClient_DownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e) {  //Cargando la informacion 
 
             RunOnUiThread(() =>
             {
