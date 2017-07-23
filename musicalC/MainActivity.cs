@@ -167,16 +167,45 @@ namespace musicalC
 
             mToolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(mToolbar);
-            SupportActionBar.Title = "Yay for the Toolbar!";
+            SupportActionBar.Title = "Bienvenido @Nombre";
 
             //else -> presenta mensaje de error no pasa de pagina
 
         }
 
+        /*MEnu de opciones*/
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.action_menu, menu);
             return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+
+            int id = item.ItemId;
+            if (id == Resource.Id.action_retro)
+            {
+                Toast.MakeText(this, "Menu seleccionadooo ", ToastLength.Short).Show();
+                return true;
+
+            }
+            else if (id == Resource.Id.action_vestuarios) {
+                Toast.MakeText(this, "Desplegar Vest ", ToastLength.Short).Show();
+                return true;
+
+            }
+            else if (id == Resource.Id.action_generos) {
+                Toast.MakeText(this, "Desplegar Genres ", ToastLength.Short).Show();
+                return true;
+
+            }
+            else if (id == Resource.Id.action_perfil) {
+                Toast.MakeText(this, "Mi Perfil Romi ", ToastLength.Short).Show();
+                return true;
+
+            }
+            return base.OnOptionsItemSelected(item);
         }
 
 

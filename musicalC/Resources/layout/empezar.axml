@@ -7,7 +7,7 @@
         android:layout_width="fill_parent"
         android:layout_height="503.0dp"
         android:id="@+id/demoImageView"
-        android:src="@drawable/chica_auriculares"
+        android:src="@drawable/logo_dance"
         android:scaleType="fitCenter" />
     <Button
         android:text="Empezar"

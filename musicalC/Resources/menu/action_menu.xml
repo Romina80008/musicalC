@@ -1,16 +1,36 @@
 ﻿<menu   xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:myapp="http://schemas.android.com/apk/res-auto">
   <item
-    android:id="@+id/action_reply"
+    android:id="@+id/action_retro"
     android:icon="@drawable/ic_action_reply"
     android:title="Reply"
     myapp:showAsAction="always" />
 
+  <!--
   <item
-  android:id="@+id/action_undo"
-  android:icon="@drawable/ic_action_undo"
-  android:title="Undo"
+  android:id="@+id/action_menu"
+  android:icon="@drawable/ic_menu_white"
+  android:title="Menu"
   myapp:showAsAction="always" />
+  -->
+  
+    <item
+  android:id="@+id/action_vestuarios"
+  android:orderInCategory="100"
+  android:title="Vestuarios"
+  myapp:showAsAction="never" />
+  
+  <item
+  android:id="@+id/action_generos"
+  android:orderInCategory="101"
+  android:title="Generos"
+  myapp:showAsAction="never" />
+  
+  <item
+  android:id="@+id/action_perfil"
+  android:orderInCategory="102"
+  android:title="Mi Perfil"
+  myapp:showAsAction="never" />
 
 
 

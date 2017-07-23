@@ -1291,34 +1291,43 @@ namespace musicalC
 			public const int ic_action_undo = 2130837575;
 			
 			// aapt resource value: 0x7f020048
-			public const int Icon = 2130837576;
+			public const int ic_menu_black = 2130837576;
 			
 			// aapt resource value: 0x7f020049
-			public const int messenger_bubble_large_blue = 2130837577;
+			public const int ic_menu_white = 2130837577;
 			
 			// aapt resource value: 0x7f02004a
-			public const int messenger_bubble_large_white = 2130837578;
+			public const int Icon = 2130837578;
 			
 			// aapt resource value: 0x7f02004b
-			public const int messenger_bubble_small_blue = 2130837579;
+			public const int logo_dance = 2130837579;
 			
 			// aapt resource value: 0x7f02004c
-			public const int messenger_bubble_small_white = 2130837580;
+			public const int messenger_bubble_large_blue = 2130837580;
 			
 			// aapt resource value: 0x7f02004d
-			public const int messenger_button_blue_bg_round = 2130837581;
+			public const int messenger_bubble_large_white = 2130837581;
 			
 			// aapt resource value: 0x7f02004e
-			public const int messenger_button_blue_bg_selector = 2130837582;
+			public const int messenger_bubble_small_blue = 2130837582;
 			
 			// aapt resource value: 0x7f02004f
-			public const int messenger_button_send_round_shadow = 2130837583;
+			public const int messenger_bubble_small_white = 2130837583;
 			
 			// aapt resource value: 0x7f020050
-			public const int messenger_button_white_bg_round = 2130837584;
+			public const int messenger_button_blue_bg_round = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int messenger_button_white_bg_selector = 2130837585;
+			public const int messenger_button_blue_bg_selector = 2130837585;
+			
+			// aapt resource value: 0x7f020052
+			public const int messenger_button_send_round_shadow = 2130837586;
+			
+			// aapt resource value: 0x7f020053
+			public const int messenger_button_white_bg_round = 2130837587;
+			
+			// aapt resource value: 0x7f020054
+			public const int messenger_button_white_bg_selector = 2130837588;
 			
 			static Drawable()
 			{
@@ -1363,6 +1372,9 @@ namespace musicalC
 			// aapt resource value: 0x7f080043
 			public const int action_context_bar = 2131230787;
 			
+			// aapt resource value: 0x7f080070
+			public const int action_generos = 2131230832;
+			
 			// aapt resource value: 0x7f080002
 			public const int action_menu_divider = 2131230722;
 			
@@ -1378,11 +1390,14 @@ namespace musicalC
 			// aapt resource value: 0x7f080031
 			public const int action_mode_close_button = 2131230769;
 			
+			// aapt resource value: 0x7f080071
+			public const int action_perfil = 2131230833;
+			
 			// aapt resource value: 0x7f08006e
-			public const int action_reply = 2131230830;
+			public const int action_retro = 2131230830;
 			
 			// aapt resource value: 0x7f08006f
-			public const int action_undo = 2131230831;
+			public const int action_vestuarios = 2131230831;
 			
 			// aapt resource value: 0x7f080032
 			public const int activity_chooser_view_content = 2131230770;
