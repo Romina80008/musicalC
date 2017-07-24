@@ -32,6 +32,12 @@
   android:title="Mi Perfil"
   myapp:showAsAction="never" />
 
+  <item
+  android:id="@+id/action_logout"
+  android:orderInCategory="102"
+  android:title="Log Out"
+  myapp:showAsAction="never" />
+
 
 
 </menu>

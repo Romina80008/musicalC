@@ -66,10 +66,13 @@ namespace musicalC
             {
                 try
                 {
+                    /* Controlar que se almacene en mi base???
                     mTxtFirstName.Text = e.mProfile.FirstName;
                     mTxtLastName.Text = e.mProfile.LastName;
                     mTxtName.Text = e.mProfile.Name;
                     mProfilePic.ProfileId = e.mProfile.Id;
+                    */
+
                 }
 
                 catch (System.Exception ex)     /*Corregir o es java.exception */

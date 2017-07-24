@@ -32,9 +32,7 @@ using Android.Support.V7.App;
 
 namespace musicalC
 {
-
-
-
+    
     [Activity(Label = "musicalC", MainLauncher = true, Icon = "@drawable/icon", Theme ="@style/MyTheme")]
     public class MainActivity : ActionBarActivity, IFacebookCallback, GraphRequest.IGraphJSONObjectCallback //Activity
     {
@@ -50,9 +48,9 @@ namespace musicalC
 
 
         /*Web Service*/
-        private ProgressBar mProgressBar; 
-        private WebClient mClient;
-        private Uri mUri;
+      //  private ProgressBar mProgressBar; 
+      //  private WebClient mClient;
+      //  private Uri mUri;
         private List<Usuario> usuarios; 
 
         /*Botones*/
@@ -60,10 +58,11 @@ namespace musicalC
         private Button btnEmpezar;
         private Button btnIniciarSesion;
 
+        LoginButton btnFacebook;
+
 
         /*Menu*/
         private Android.Support.V7.Widget.Toolbar mToolbar;
-
 
 
 
@@ -71,14 +70,16 @@ namespace musicalC
         {
             base.OnCreate(bundle);
 
-
+            /*
             FacebookSdk.SdkInitialize(this.ApplicationContext);
 
             mProfileTracker = new MyProfileTracker();
             mProfileTracker.mOnProfileChanged += mProfileTracker_mOnProfileChanged;
             mProfileTracker.StartTracking();
+            */
 
             // Renderizando primerapantalla 
+
             SetContentView(Resource.Layout.empezar);
 
             btnEmpezar = FindViewById<Button>(Resource.Id.btnEmpezar);
@@ -90,19 +91,6 @@ namespace musicalC
 
         }//Fin del main 
 
-
-
-
-
-     
-        public void ConsumirServicioGet() {
-            // Consumiendo servicio get 
-            mClient = new WebClient();
-            mUri = new Uri("http://didacdedm.pythonanywhere.com/api/users");
-
-            mClient.DownloadDataAsync(mUri);
-            mClient.DownloadDataCompleted += mClient_DownloadDataCompleted;
-        } 
 
 
         /*Metodo de registro*/
@@ -133,9 +121,15 @@ namespace musicalC
         public void btn_empezar(object sender, EventArgs e)
         {
             //pantalla para logearse
+            FacebookSdk.SdkInitialize(this.ApplicationContext);
+
+
             SetContentView(Resource.Layout.Main);
 
-           
+            mProfileTracker = new MyProfileTracker();
+            mProfileTracker.mOnProfileChanged += mProfileTracker_mOnProfileChanged;
+            mProfileTracker.StartTracking();
+
 
             /*Informacion extraida de facebook*/
             mTxtFirstName = FindViewById<TextView>(Resource.Id.txtFirstName);
@@ -143,10 +137,10 @@ namespace musicalC
             mTxtName = FindViewById<TextView>(Resource.Id.txtName);
             mProfilePic = FindViewById<ProfilePictureView>(Resource.Id.profilePic);
 
-            LoginButton btnFacebook = FindViewById<LoginButton>(Resource.Id.login_button);
-            btnFacebook.SetReadPermissions(new List<string> { "public_profile", "user_friends", "email" });
-            mCallBackManager = CallbackManagerFactory.Create();
-            btnFacebook.RegisterCallback(mCallBackManager, this);
+            // LoginButton
+            btnFacebook = FindViewById<LoginButton>(Resource.Id.login_button);
+            btnFacebook.Click += botonFB; 
+
 
             
             btnRegistrar = FindViewById<Button>(Resource.Id.btnRegistrar);
@@ -155,8 +149,13 @@ namespace musicalC
             btnIniciarSesion = FindViewById<Button>(Resource.Id.btnIniciarSesion);
             btnIniciarSesion.Click += btn_iniciar_sesion;
 
+        }
 
-
+        private void botonFB(object sender, EventArgs e)
+        {
+            btnFacebook.SetReadPermissions(new List<string> { "public_profile", "user_friends", "email" });
+            mCallBackManager = CallbackManagerFactory.Create();
+            btnFacebook.RegisterCallback(mCallBackManager, this);
         }
 
         /*Metodo de registro*/
@@ -165,9 +164,13 @@ namespace musicalC
             //si esque el usuario se encuentra en la base 
             SetContentView(Resource.Layout.Principal);
 
+
+
             mToolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(mToolbar);
             SupportActionBar.Title = "Bienvenido @Nombre";
+
+
 
             //else -> presenta mensaje de error no pasa de pagina
 
@@ -186,7 +189,7 @@ namespace musicalC
             int id = item.ItemId;
             if (id == Resource.Id.action_retro)
             {
-                Toast.MakeText(this, "Menu seleccionadooo ", ToastLength.Short).Show();
+                SetContentView(Resource.Layout.Principal);
                 return true;
 
             }
@@ -202,6 +205,8 @@ namespace musicalC
             }
             else if (id == Resource.Id.action_perfil) {
                 Toast.MakeText(this, "Mi Perfil Romi ", ToastLength.Short).Show();
+                SetContentView(Resource.Layout.Pantalla_Perfil);
+
                 return true;
 
             }
@@ -210,6 +215,7 @@ namespace musicalC
 
 
         /*Consumiendo servicio*/
+        /*
         public void mClient_DownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e) {  //Cargando la informacion 
 
             RunOnUiThread(() =>
@@ -221,7 +227,7 @@ namespace musicalC
             });
 
         }
-
+        */
 
         public void OnCompleted(Org.Json.JSONObject json, GraphResponse response)
         {
@@ -241,10 +247,20 @@ namespace musicalC
             {                               
                 try
                 {
-                    mTxtFirstName.Text = e.mProfile.FirstName;
+                    /* Insanciar en mi base tambien ??
+                    mTxtFirstName.Text = e.mProfile.FirstName; //e.mProfile.FirstName;
                     mTxtLastName.Text = e.mProfile.LastName;
                     mTxtName.Text = e.mProfile.Name;
                     mProfilePic.ProfileId = e.mProfile.Id;
+
+                    */
+
+                    SetContentView(Resource.Layout.Principal);
+
+                    mToolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+                    SetSupportActionBar(mToolbar);
+                    SupportActionBar.Title = "Hi,  " + e.mProfile.FirstName + " ! ";
+
                 }
 
                 catch (System.Exception ex)     /*Corregir o es java.exception */

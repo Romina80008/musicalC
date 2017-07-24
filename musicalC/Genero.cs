@@ -12,7 +12,20 @@ using Android.Widget;
 
 namespace musicalC
 {
-    class Genero
+    class Genero : EventArgs
     {
+        public string descripcion { get; set; }
+        public string id { get; set; }
+        public string name { get; set; }
+
+
+        public Genero(string descripcion, string id, string name)
+        {
+            this.descripcion = descripcion;
+            this.id = id;
+            this.name = name;
+        }
+
+
     }
 }
