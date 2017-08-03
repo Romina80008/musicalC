@@ -59,6 +59,22 @@ namespace musicalC
 			}
 		}
 		
+		public partial class Array
+		{
+			
+			// aapt resource value: 0x7f0c0000
+			public const int generos = 2131492864;
+			
+			static Array()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Array()
+			{
+			}
+		}
+		
 		public partial class Attribute
 		{
 			
@@ -1348,8 +1364,8 @@ namespace musicalC
 			// aapt resource value: 0x7f08005e
 			public const int UserName = 2131230814;
 			
-			// aapt resource value: 0x7f08006c
-			public const int absoluteLayout1 = 2131230828;
+			// aapt resource value: 0x7f08006d
+			public const int absoluteLayout1 = 2131230829;
 			
 			// aapt resource value: 0x7f080042
 			public const int action_bar = 2131230786;
@@ -1375,11 +1391,11 @@ namespace musicalC
 			// aapt resource value: 0x7f080043
 			public const int action_context_bar = 2131230787;
 			
-			// aapt resource value: 0x7f080078
-			public const int action_generos = 2131230840;
+			// aapt resource value: 0x7f080079
+			public const int action_generos = 2131230841;
 			
-			// aapt resource value: 0x7f08007a
-			public const int action_logout = 2131230842;
+			// aapt resource value: 0x7f08007b
+			public const int action_logout = 2131230843;
 			
 			// aapt resource value: 0x7f080002
 			public const int action_menu_divider = 2131230722;
@@ -1396,14 +1412,14 @@ namespace musicalC
 			// aapt resource value: 0x7f080031
 			public const int action_mode_close_button = 2131230769;
 			
-			// aapt resource value: 0x7f080079
-			public const int action_perfil = 2131230841;
-			
-			// aapt resource value: 0x7f080076
-			public const int action_retro = 2131230838;
+			// aapt resource value: 0x7f08007a
+			public const int action_perfil = 2131230842;
 			
 			// aapt resource value: 0x7f080077
-			public const int action_vestuarios = 2131230839;
+			public const int action_retro = 2131230839;
+			
+			// aapt resource value: 0x7f080078
+			public const int action_vestuarios = 2131230840;
 			
 			// aapt resource value: 0x7f080032
 			public const int activity_chooser_view_content = 2131230770;
@@ -1432,8 +1448,8 @@ namespace musicalC
 			// aapt resource value: 0x7f080062
 			public const int btnRegistrar = 2131230818;
 			
-			// aapt resource value: 0x7f080075
-			public const int btnRegistrar1 = 2131230837;
+			// aapt resource value: 0x7f080076
+			public const int btnRegistrar1 = 2131230838;
 			
 			// aapt resource value: 0x7f080022
 			public const int button = 2131230754;
@@ -1489,6 +1505,9 @@ namespace musicalC
 			// aapt resource value: 0x7f08001c
 			public const int dropdown = 2131230748;
 			
+			// aapt resource value: 0x7f08006c
+			public const int editText1 = 2131230828;
+			
 			// aapt resource value: 0x7f080044
 			public const int edit_query = 2131230788;
 			
@@ -1501,8 +1520,8 @@ namespace musicalC
 			// aapt resource value: 0x7f080039
 			public const int expanded_menu = 2131230777;
 			
-			// aapt resource value: 0x7f08006d
-			public const int gridLayout1 = 2131230829;
+			// aapt resource value: 0x7f08006e
+			public const int gridLayout1 = 2131230830;
 			
 			// aapt resource value: 0x7f080004
 			public const int home = 2131230724;
@@ -1624,11 +1643,11 @@ namespace musicalC
 			// aapt resource value: 0x7f08002e
 			public const int small = 2131230766;
 			
-			// aapt resource value: 0x7f08006f
-			public const int spinner1 = 2131230831;
+			// aapt resource value: 0x7f080070
+			public const int spinner1 = 2131230832;
 			
-			// aapt resource value: 0x7f08006e
-			public const int spinner2 = 2131230830;
+			// aapt resource value: 0x7f08006f
+			public const int spinner2 = 2131230831;
 			
 			// aapt resource value: 0x7f080007
 			public const int split_action_bar = 2131230727;
@@ -1663,8 +1682,8 @@ namespace musicalC
 			// aapt resource value: 0x7f080068
 			public const int txtApellidoPerfil = 2131230824;
 			
-			// aapt resource value: 0x7f080074
-			public const int txtConfirmPassword = 2131230836;
+			// aapt resource value: 0x7f080075
+			public const int txtConfirmPassword = 2131230837;
 			
 			// aapt resource value: 0x7f08006a
 			public const int txtEmail = 2131230826;
@@ -1672,14 +1691,14 @@ namespace musicalC
 			// aapt resource value: 0x7f08005b
 			public const int txtFirstName = 2131230811;
 			
-			// aapt resource value: 0x7f080071
-			public const int txtFirstname = 2131230833;
+			// aapt resource value: 0x7f080072
+			public const int txtFirstname = 2131230834;
 			
 			// aapt resource value: 0x7f08005c
 			public const int txtLastName = 2131230812;
 			
-			// aapt resource value: 0x7f080072
-			public const int txtLastname = 2131230834;
+			// aapt resource value: 0x7f080073
+			public const int txtLastname = 2131230835;
 			
 			// aapt resource value: 0x7f08005d
 			public const int txtName = 2131230813;
@@ -1687,14 +1706,14 @@ namespace musicalC
 			// aapt resource value: 0x7f080066
 			public const int txtNombrePerfil = 2131230822;
 			
-			// aapt resource value: 0x7f080073
-			public const int txtPassword = 2131230835;
+			// aapt resource value: 0x7f080074
+			public const int txtPassword = 2131230836;
 			
 			// aapt resource value: 0x7f08006b
 			public const int txtUserNamePerfil = 2131230827;
 			
-			// aapt resource value: 0x7f080070
-			public const int txtUsername = 2131230832;
+			// aapt resource value: 0x7f080071
+			public const int txtUsername = 2131230833;
 			
 			// aapt resource value: 0x7f080020
 			public const int unknown = 2131230752;
@@ -1870,8 +1889,8 @@ namespace musicalC
 		public partial class Menu
 		{
 			
-			// aapt resource value: 0x7f0c0000
-			public const int action_menu = 2131492864;
+			// aapt resource value: 0x7f0d0000
+			public const int action_menu = 2131558400;
 			
 			static Menu()
 			{
@@ -1993,6 +2012,9 @@ namespace musicalC
 			
 			// aapt resource value: 0x7f0a0020
 			public const int messenger_send_button_text = 2131361824;
+			
+			// aapt resource value: 0x7f0a0024
+			public const int planet_prompt = 2131361828;
 			
 			static String()
 			{

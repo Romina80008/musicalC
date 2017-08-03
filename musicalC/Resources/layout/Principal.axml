@@ -32,7 +32,9 @@
         android:layout_height="33.5dp"
         android:id="@+id/spinner2"
         android:layout_marginTop="21.5dp"
-        android:backgroundTint="#ff808080" />
+        android:backgroundTint="#ff808080"
+        android:prompt="@string/musicales"
+        />
     <TextView
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_width="match_parent"
@@ -49,7 +51,9 @@
         android:layout_height="28.5dp"
         android:id="@+id/spinner1"
         android:layout_marginBottom="14.5dp"
-        android:layout_marginTop="9.5dp" />
+        android:layout_marginTop="9.5dp"
+        android:prompt="@string/generos"
+        />
     <Button
         android:text="Busca tu look! "
         android:layout_width="fill_parent"

@@ -3,4 +3,17 @@
     <string name="Hello">Hello World, Click Me!</string>
     <string name="ApplicationName">musicalC</string>
   <string name="facebook_app_id">1373639469391596</string>
+  <string name="planet_prompt">Choose a planet</string>
+  <string-array name="generos">
+    <item>Femenino</item>
+    <item>Masculino</item>
+  </string-array>
+  <string-array name="musicales">
+    <item>Salsa</item>
+    <item>Jazz</item>
+    <item>Rock</item>
+    <item>Reggaeton</item>
+    <item>Raggea</item>
+    <item>Bachata</item>
+  </string-array>
 </resources>

@@ -169,11 +169,42 @@ namespace musicalC
             mToolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(mToolbar);
             SupportActionBar.Title = "Bienvenido @Nombre";
-
+            spin();
 
 
             //else -> presenta mensaje de error no pasa de pagina
 
+        }
+
+        public void spin() {
+            Spinner spinner = FindViewById<Spinner>(Resource.Id.spinner1);
+            Spinner spinner2 = FindViewById<Spinner>(Resource.Id.spinner2);
+
+            spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            var adapter = ArrayAdapter.CreateFromResource(
+                    this, Resource.Array.generos, Android.Resource.Layout.SimpleSpinnerItem); //generos esta declarado en strings.xml 
+
+            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleDropDownItem1Line);
+            spinner.Adapter = adapter;
+
+            /*Otro spinner */
+            spinner2.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+           /* var adapter2 = ArrayAdapter.CreateFromResource(
+                    this, Resource.Array.musicales, Android.Resource.Layout.SimpleSpinnerItem); //generos esta declarado en strings.xml 
+
+            adapter2.SetDropDownViewResource(Android.Resource.Layout.SimpleDropDownItem1Line);
+            spinner2.Adapter = adapter2;
+            */
+
+        }
+
+        /*Metodo para el spinner o combobox */
+        private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            Spinner spinner = (Spinner)sender;
+
+           // string toast = string.Format("{0}", spinner.GetItemAtPosition(e.Position));
+           // Toast.MakeText(this, toast, ToastLength.Long).Show();
         }
 
         /*MEnu de opciones*/
@@ -190,6 +221,7 @@ namespace musicalC
             if (id == Resource.Id.action_retro)
             {
                 SetContentView(Resource.Layout.Principal);
+                spin();
                 return true;
 
             }
@@ -260,6 +292,7 @@ namespace musicalC
                     mToolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
                     SetSupportActionBar(mToolbar);
                     SupportActionBar.Title = "Hi,  " + e.mProfile.FirstName + " ! ";
+                    spin();
 
                 }
 
